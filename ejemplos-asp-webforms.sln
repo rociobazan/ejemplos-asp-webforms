@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pokedex-web", "pokedex-web\pokedex-web.csproj", "{F8C9E36F-BB36-4F09-B388-EF3C792A63B1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{1123F810-EF66-4379-8221-7D0BFE96C701}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{974D539C-098C-4E52-89FB-7B433F91DC0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pokedex-web", "pokedex-web\pokedex-web.csproj", "{B7E31D96-1056-4B54-8072-60854010B7EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8C9E36F-BB36-4F09-B388-EF3C792A63B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8C9E36F-BB36-4F09-B388-EF3C792A63B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8C9E36F-BB36-4F09-B388-EF3C792A63B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8C9E36F-BB36-4F09-B388-EF3C792A63B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1123F810-EF66-4379-8221-7D0BFE96C701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1123F810-EF66-4379-8221-7D0BFE96C701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1123F810-EF66-4379-8221-7D0BFE96C701}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{974D539C-098C-4E52-89FB-7B433F91DC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974D539C-098C-4E52-89FB-7B433F91DC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974D539C-098C-4E52-89FB-7B433F91DC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7E31D96-1056-4B54-8072-60854010B7EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E31D96-1056-4B54-8072-60854010B7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E31D96-1056-4B54-8072-60854010B7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E31D96-1056-4B54-8072-60854010B7EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
