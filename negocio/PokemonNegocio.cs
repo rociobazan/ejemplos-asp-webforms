@@ -50,6 +50,8 @@ namespace negocio
                     aux.Debilidad.Id = (int)lector["IdDebilidad"];
                     aux.Debilidad.Descripcion = (string)lector["Debilidad"];
 
+
+
                     lista.Add(aux);
                 }
 
@@ -89,6 +91,10 @@ namespace negocio
                     aux.Debilidad = new Elemento();
                     aux.Debilidad.Id = (int)datos.Lector["IdDebilidad"];
                     aux.Debilidad.Descripcion = (string)datos.Lector["Debilidad"];
+
+                    aux.Activo = bool.Parse(datos.Lector["Activo"].ToString());
+
+
 
                     lista.Add(aux);
                 }

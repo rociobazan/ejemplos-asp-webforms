@@ -10,6 +10,7 @@
             <asp:BoundField headerText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Número" DataField="Numero" />
             <asp:BoundField HeaderText="Tipo" DataField="Tipo.Descripcion" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
             <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✍️" />
         </Columns>
     </asp:GridView>
