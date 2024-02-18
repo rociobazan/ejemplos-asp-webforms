@@ -48,6 +48,10 @@ namespace pokedex_web
                     List<Pokemon> lista = negocio.listar(id);
                     Pokemon seleccionado = lista[0];
 
+                    //guardo pokemon seleccionado en sesión
+
+                    Session.Add("PokemonSeleccionado", seleccionado);
+
                     //precargar todos los campos
 
                     txtId.Text = id;
@@ -62,13 +66,18 @@ namespace pokedex_web
 
                     txtImageUrl1_TextChanged(sender, e);
 
+                    //Configurar acciones
+
+                    if(!seleccionado.Activo)
+                        btnInactivar.Text = "Reactivar";
+
                 }
                 
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                Session.Add("error", ex);
             }
 
             
@@ -149,7 +158,8 @@ namespace pokedex_web
             try
             {
                 PokemonNegocio negocio = new PokemonNegocio();
-                negocio.eliminarLogico(int.Parse(txtId.Text));
+                Pokemon seleccionado = (Pokemon)Session["PokemonSeleccionado"];
+                negocio.eliminarLogico(seleccionado.Id, !seleccionado.Activo);
                 Response.Redirect("PokemonLista.aspx");
 
             }
