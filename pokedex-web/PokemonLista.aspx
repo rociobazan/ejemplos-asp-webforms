@@ -3,6 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Lista de pokemon</h1>
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <asp:Label Text="Filtrar" runat="server" />
+                <asp:TextBox Id="txtFiltro" runat="server" AutoPostBack="true" CssClass="form-control" OnTextChanged="txtFiltro_TextChanged" />
+            </div>
+        </div>
+    </div>
+    
     <asp:GridView ID="dgvPokemons" runat="server" CssClass="table" DataKeyNames="Id" 
         AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPokemons_SelectedIndexChanged"
         OnPageIndexChanging="dgvPokemons_PageIndexChanging"  AllowPaging="true" PageSize="5">
