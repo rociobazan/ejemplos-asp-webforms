@@ -1,4 +1,5 @@
-﻿using System;
+﻿using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,13 @@ namespace pokedex_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!(Page is Login || Page is Default || Page is Registro))
+            {
+                if (!Seguridad.sesionActiva(Session["trainee"]))
+                {
+                    Response.Redirect("Login.aspx", false);
+                }
+            }
         }
     }
 }

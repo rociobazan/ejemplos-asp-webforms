@@ -70,8 +70,7 @@
     <Content Include="Error.aspx" />
     <Content Include="FormularioPokemon.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="MenuLogin.aspx" />
-    <Content Include="Pagina2LoginAdmin.aspx" />
+    <Content Include="MiPerfil.aspx" />
     <Content Include="PokemonLista.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
@@ -107,19 +106,12 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="MenuLogin.aspx.cs">
-      <DependentUpon>MenuLogin.aspx</DependentUpon>
+    <Compile Include="MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuLogin.aspx.designer.cs">
-      <DependentUpon>MenuLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pagina2LoginAdmin.aspx.cs">
-      <DependentUpon>Pagina2LoginAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pagina2LoginAdmin.aspx.designer.cs">
-      <DependentUpon>Pagina2LoginAdmin.aspx</DependentUpon>
+    <Compile Include="MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="PokemonLista.aspx.cs">
       <DependentUpon>PokemonLista.aspx</DependentUpon>

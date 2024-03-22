@@ -11,7 +11,7 @@ namespace pokedex_web
 {
 
 
-    public partial class Pagina2LoginAdmin
+    public partial class MiPerfil
     {
     }
 }

@@ -16,28 +16,27 @@ namespace pokedex_web
 
         }
 
-        protected void btnIngresar_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Usuario usuario;
-            UsuarioNegocio negocio = new UsuarioNegocio();
+            Trainee trainee = new Trainee();
+            TraineeNegocio negocio = new TraineeNegocio();
 
             try
             {
-                usuario = new Usuario(txtUser.Text, txtPassword.Text, false);
+                trainee.Email = txtEmail.Text;
+                trainee.Pass = txtPassword.Text;
 
-                if (negocio.Loguear(usuario))
+                if (negocio.Login(trainee))
                 {
-                    Session.Add("usuario", usuario);
-                    Response.Redirect("MenuLogin.aspx", false);
+                    Session.Add("trainee", trainee);
+                    Response.Redirect("MiPerfil.aspx", false);
+                
                 }
                 else
                 {
                     Session.Add("error", "user o pass incorrectos");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx");
                 }
-
-
-                
             }
             catch (Exception ex)
             {
@@ -45,8 +44,8 @@ namespace pokedex_web
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
-            
-            
+
+
         }
     }
 }       
