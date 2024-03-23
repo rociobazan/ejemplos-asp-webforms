@@ -25,13 +25,17 @@ namespace pokedex_web
                 EmailService emailService = new EmailService();
                 user.Email = txtEmail.Text;
                 user.Pass = txtPassword.Text;
-                int id = traineeNegocio.insertarNuevo(user);
+                user.Id = traineeNegocio.insertarNuevo(user);
+
+                Session.Add("trainee", user);
 
                 
                 emailService.armarCorreo(user.Email, "Bienvedid@, trainee", "te damos la bienvenida a la mejor de las mejores app pokemon :D. Gracias por registrarte, tkm, tkm <3");
                 emailService.enviarEmail();
 
+                
                 Response.Redirect("default.aspx", false);
+
             }
             catch (Exception ex)
             {
