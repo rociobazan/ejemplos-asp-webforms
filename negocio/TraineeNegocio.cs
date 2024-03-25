@@ -17,12 +17,14 @@ namespace negocio
             try
 			{
 				datos.setearConsulta("update USERS set imagenPerfil = @imagen, nombre = @nombre, apellido = @apellido, fechaNacimiento = @fecha where id = @id");
-				datos.setearParametro("@imagen", user.ImagenPerfil != null ? user.ImagenPerfil : "" );
+				datos.setearParametro("@imagen", user.ImagenPerfil != null ? user.ImagenPerfil : (object)DBNull.Value);
                 datos.setearParametro("@nombre", user.Nombre);
                 datos.setearParametro("@apellido", user.Apellido);
                 datos.setearParametro("@fecha", user.FechaNacimiento);
                 datos.setearParametro("@id", user.Id);
 				datos.ejecutarAccion();
+
+				
 
 			}
 			catch (Exception ex)
