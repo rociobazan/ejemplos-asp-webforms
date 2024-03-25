@@ -13,11 +13,66 @@ namespace pokedex_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
-            if (!(Seguridad.sesionActiva(Session["trainee"])))
+
+            if (!IsPostBack)
             {
-                Response.Redirect("Login.aspx", false);
+                if ((Seguridad.sesionActiva(Session["trainee"])))
+                {
+                    try
+                    {
+                        Trainee user = (Trainee)Session["Trainee"];
+
+                        txtEmail.Text = user.Email;
+                        txtEmail.ReadOnly = true;
+                        txtNombre.Text = user.Nombre;
+                        txtApellido.Text = user.Apellido;
+                        txtFechaNacimiento.Text = user.FechaNacimiento.ToString("yyyy-MM-dd");
+
+                        if (!string.IsNullOrEmpty(user.ImagenPerfil))
+                            imgNuevoPerfil.ImageUrl = "~/Images/" + user.ImagenPerfil;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }
+            }
+            
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                TraineeNegocio negocio = new TraineeNegocio();
+                Trainee user = (Trainee)Session["Trainee"];
+
+                //Escribir imagen solo si se le cargo algo
+                if (txtImagen.PostedFile.FileName != "")
+                {
+                    string ruta = Server.MapPath("./Images/");
+                    txtImagen.PostedFile.SaveAs(ruta + "perfil-" + user.Id + ".jpg");
+                    user.ImagenPerfil = "perfil-" + user.Id + ".jpg";
+                }
+
+                user.Nombre = txtNombre.Text;
+                user.Apellido = txtApellido.Text;
+                user.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
+
+                //guardar datos perfil
+                negocio.Actualizar(user);
+
+                //Leer imagen
+                Image img = (Image)Master.FindControl("imgAvatar");
+                img.ImageUrl = "~/images/" + user.ImagenPerfil;
+                
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
             }
         }
     }
