@@ -27,5 +27,9 @@ namespace negocio
             return trainee != null ? trainee.Admin : false;
         }
 
+        public static string manejoDeError(object error)
+        {
+            return error.ToString();
+        }
     }
 }

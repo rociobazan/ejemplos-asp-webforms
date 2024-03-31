@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dominio;
 using negocio;
+using static System.Collections.Specialized.BitVector32;
 
 namespace negocio
 {
@@ -23,11 +24,8 @@ namespace negocio
                 datos.setearParametro("@fecha", user.FechaNacimiento);
                 datos.setearParametro("@id", user.Id);
 				datos.ejecutarAccion();
-
-				
-
-			}
-			catch (Exception ex)
+            }
+            catch (Exception ex)
 			{
 
 				throw ex;
@@ -50,10 +48,10 @@ namespace negocio
 				return datos.ejecutarAccionScalar();
 
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 
-				throw;
+				throw ex; 
 			}
 			finally
 			{

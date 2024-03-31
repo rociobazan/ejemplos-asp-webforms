@@ -96,7 +96,8 @@ namespace pokedex_web
             catch (Exception ex)
             {
 
-                Session.Add("Error", ex);
+                Session.Add("Error", Seguridad.manejoDeError(ex));
+                Response.Redirect("Error.aspx", false);
             }
         }
 

@@ -40,7 +40,8 @@ namespace pokedex_web
             catch (Exception ex)
             {
 
-                Session.Add("Error", ex.ToString());
+                Session.Add("Error", Seguridad.manejoDeError(ex));
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

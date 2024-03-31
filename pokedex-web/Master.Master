@@ -43,10 +43,11 @@
                       {%>
                         <asp:Button Text="Salir" ID="btnSalir" OnClick="btnSalir_Click" CssClass="btn btn-outline-primary me-2" runat="server" />
                         <asp:Label Text="text" Id="lblUser" CssClass="text-light m-auto me-2" runat="server" />
+                        <asp:Image ID="imgAvatar" ImageUrl="https://img.freepik.com/vector-premium/icono-cuenta-icono-usuario-graficos-vectoriales_292645-552.jpg?w=740"
+                        style="height:40px; width:40px; border-radius:50%;" runat="server"/>
                    <% }%>
 
-                    <asp:Image ID="imgAvatar" ImageUrl="https://img.freepik.com/vector-premium/icono-cuenta-icono-usuario-graficos-vectoriales_292645-552.jpg?w=740"
-                        style="height:40px; width:40px; border-radius:50%;" runat="server"/>
+                    
                 </div>
             </div>
         </nav>

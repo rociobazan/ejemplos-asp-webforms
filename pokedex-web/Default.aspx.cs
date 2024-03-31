@@ -17,8 +17,18 @@ namespace pokedex_web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PokemonNegocio negocio = new PokemonNegocio();
-            ListaPokemon = negocio.listarConSp();
+
+            try
+            {
+                PokemonNegocio negocio = new PokemonNegocio();
+                ListaPokemon = negocio.listarConSp();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", Seguridad.manejoDeError(ex));
+                Response.Redirect("Error.aspx", false);
+            }
+            
         }
     }
 }

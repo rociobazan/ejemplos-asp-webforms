@@ -34,7 +34,8 @@ namespace pokedex_web
                     catch (Exception ex)
                     {
 
-                        throw ex;
+                        Session.Add("Error", Seguridad.manejoDeError(ex));
+                        Response.Redirect("Error.aspx", false);
                     }
                 }
             }
@@ -45,6 +46,10 @@ namespace pokedex_web
         {
             try
             {
+
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
 
                 TraineeNegocio negocio = new TraineeNegocio();
                 Trainee user = (Trainee)Session["Trainee"];
@@ -72,7 +77,8 @@ namespace pokedex_web
             catch (Exception ex)
             {
 
-                Session.Add("error", ex.ToString());
+                Session.Add("Error", Seguridad.manejoDeError(ex));
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

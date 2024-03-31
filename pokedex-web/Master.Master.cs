@@ -24,16 +24,15 @@ namespace pokedex_web
                 {
                     Response.Redirect("Login.aspx", false);
                 }
-                else
-                {
-                    Trainee user = (Trainee)Session["trainee"];
-                    lblUser.Text = user.Email;
-                    if (!string.IsNullOrEmpty(user.ImagenPerfil))
-                        imgAvatar.ImageUrl = "~/images/" + user.ImagenPerfil;
-                }
 
             }
- 
+            if (Seguridad.sesionActiva(Session["trainee"]))
+            {
+                Trainee user = (Trainee)Session["trainee"];
+                lblUser.Text = user.Email;
+                if (!string.IsNullOrEmpty(user.ImagenPerfil))
+                    imgAvatar.ImageUrl = "~/images/" + user.ImagenPerfil;
+            }
                 
         }
 
